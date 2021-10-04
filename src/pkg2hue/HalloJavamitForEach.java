@@ -18,5 +18,8 @@ public class HalloJavamitForEach {
         }
         //interface List ausgabe
         test.dieListe.forEach((String s) -> System.out.println(s));
+        
+        NumberTester nt = new NumberTester("testdoc.txt");
+        nt.testFile();
     }
 }
