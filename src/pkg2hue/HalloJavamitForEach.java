@@ -24,17 +24,27 @@ public class HalloJavamitForEach {
 
         //Number
         Number.CalculationOperation relationalAdd = (x, y) -> {
-            double x1 = x.getA();
-            double x2 = x.getB();
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() + y.getB() * x.getA());
 
-            double y1 = y.getA();
-            double y2 = y.getB();
-
-            double erg1 = x1 * y1;
-            double erg2 = x2 * y2;
-
-            Number erg = new Number(erg1, erg2);
+            Number erg = new Number(zaehler, nenner);
             return erg;
+        };
+
+        Number.CalculationOperation relationSub = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        Number.CalculationOperation relationMul = (x, y) -> {
+            return null; //To change body of generated lambdas, choose Tools | Templates.
+        };
+
+        Number.CalculationOperation relationDiv = (x, y) -> {
+            return null; //To change body of generated lambdas, choose Tools | Templates.
         };
     }
 }
