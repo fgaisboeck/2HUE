@@ -22,8 +22,10 @@ public class HalloJavamitForEach {
         NumberTester nt = new NumberTester("testdoc.txt");
         nt.testFile();
 
-        //Number
-        Number.CalculationOperation relationalAdd = (x, y) -> {
+//Number
+        
+        //Rational 
+        Number.CalculationOperation rationalAdd = (x, y) -> {
             double nenner = x.getB() * y.getB();
             double zaehler = (x.getB() * y.getA() + y.getB() * x.getA());
 
@@ -31,7 +33,7 @@ public class HalloJavamitForEach {
             return erg;
         };
 
-        Number.CalculationOperation relationSub = (x, y) -> {
+        Number.CalculationOperation rationalSub = (x, y) -> {
             double nenner = x.getB() * y.getB();
             double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
 
@@ -39,12 +41,29 @@ public class HalloJavamitForEach {
             return erg;
         };
 
-        Number.CalculationOperation relationMul = (x, y) -> {
-            return null; //To change body of generated lambdas, choose Tools | Templates.
-        };
+        Number.CalculationOperation rationalMul = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
 
-        Number.CalculationOperation relationDiv = (x, y) -> {
-            return null; //To change body of generated lambdas, choose Tools | Templates.
-        };
+            Number erg = new Number(zaehler, nenner);
+            return erg; };
+
+        Number.CalculationOperation rationalDiv = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg; };
+        
+        RationalCalculator rationalC = new RationalCalculator(rationalAdd, rationalSub, rationalMul, rationalDiv);
+        
+        //VectorCalculator
+        
+        
+        
+        
+        //ComplexCalculator
+        
+       
     }
 }
