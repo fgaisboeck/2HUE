@@ -23,8 +23,7 @@ public class HalloJavamitForEach {
         nt.testFile();
 
 //Number
-        
-        //Rational 
+        //Rational
         Number.CalculationOperation rationalAdd = (x, y) -> {
             double nenner = x.getB() * y.getB();
             double zaehler = (x.getB() * y.getA() + y.getB() * x.getA());
@@ -46,24 +45,89 @@ public class HalloJavamitForEach {
             double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
 
             Number erg = new Number(zaehler, nenner);
-            return erg; };
+            return erg;
+        };
 
         Number.CalculationOperation rationalDiv = (x, y) -> {
             double nenner = x.getB() * y.getB();
             double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
 
             Number erg = new Number(zaehler, nenner);
-            return erg; };
-        
+            return erg;
+        };
+
         RationalCalculator rationalC = new RationalCalculator(rationalAdd, rationalSub, rationalMul, rationalDiv);
-        
+
         //VectorCalculator
-        
-        
-        
-        
+        //no
+        Number.CalculationOperation vectorAdd = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() + y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        Number.CalculationOperation vectorSub = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        Number.CalculationOperation vectorMul = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        Number.CalculationOperation vectorDiv = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        VectorCalculator VectorC = new VectorCalculator(vectorAdd, vectorSub, vectorMul, vectorDiv);
+
         //ComplexCalculator
-        
-       
+        //no
+        Number.CalculationOperation complexAdd = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() + y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        Number.CalculationOperation complexSub = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        Number.CalculationOperation complexMul = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        Number.CalculationOperation complexDiv = (x, y) -> {
+            double nenner = x.getB() * y.getB();
+            double zaehler = (x.getB() * y.getA() - y.getB() * x.getA());
+
+            Number erg = new Number(zaehler, nenner);
+            return erg;
+        };
+
+        ComplexCalculator complexC = new ComplexCalculator(complexAdd, complexSub, complexMul, complexDiv);
     }
 }
