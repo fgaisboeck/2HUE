@@ -8,22 +8,26 @@ public class ComplexCalculator extends AbstractCalculator {
 
     @Override
     public Number add(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Number n = add.calc(a, b);
+        return n;
     }
 
     @Override
     public Number subtract(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Number n = subtract.calc(a, b);
+        return n;
     }
 
     @Override
     public Number multiply(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Number n = multiply.calc(a, b);
+        return n;
     }
 
     @Override
     public Number divide(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Number n = divide.calc(a, b);
+        return n;
     }
 
 }

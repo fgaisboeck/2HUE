@@ -6,39 +6,27 @@ public class RationalCalculator extends AbstractCalculator {
         super(add, subtract, multiply, divide);
     }
 
-    //unsicher
     @Override
     public Number add(Number a, Number b) {
-            double nenner = a.getB() * b.getB();
-            double zaehler = (a.getB() * b.getA() + b.getB() * a.getA());
-
-            Number erg = new Number(zaehler, nenner);
-            return erg;
+        Number n = add.calc(a, b);
+        return n;
     }
 
     @Override
     public Number subtract(Number a, Number b) {
-            double nenner = a.getB() * b.getB();
-            double zaehler = (a.getB() * b.getA() - b.getB() * a.getA());
-
-            Number erg = new Number(zaehler, nenner);
-            return erg; }
+        Number n = subtract.calc(a, b);
+        return n;
+    }
 
     @Override
     public Number multiply(Number a, Number b) {
-            double nenner = a.getB() * b.getB();
-            double zaehler = a.getA() * b.getA();
-
-            Number erg = new Number(zaehler, nenner);
-            return erg; }
-    
+        Number n = multiply.calc(a, b);
+        return n;
+    }
 
     @Override
     public Number divide(Number a, Number b) {
-         double nenner = a.getB() * b.getA();
-            double zaehler = a.getA() * b.getB();
-
-            Number erg = new Number(zaehler, nenner);
-            return erg; }
+        Number n = divide.calc(a, b);
+        return n;
     }
-
+}
