@@ -19,6 +19,7 @@ public class HalloJavamitForEach {
         }
         //interface List ausgabe
         test.dieListe.forEach((String s) -> System.out.println(s));
+        test.dieListe.forEach(System.out::print);
 
         NumberTester nt = new NumberTester("testdoc.txt");
         nt.testFile();
@@ -57,8 +58,6 @@ public class HalloJavamitForEach {
             return erg;
         };
 
-        RationalCalculator rationalC = new RationalCalculator(rationalAdd, rationalSub, rationalMul, rationalDiv);
-
         //VectorCalculator
         Number.CalculationOperation vectorAdd = (x, y) -> {
             double a = x.getA() + y.getA();
@@ -88,15 +87,13 @@ public class HalloJavamitForEach {
         Number.CalculationOperation vectorDiv = (x, y) -> {
             double a = (x.getA() + y.getB() * y.getA() * y.getB());
 
-            //double längeA = Math.pow(x.getA()*x.getA() + x.getB() * x.getB(), 0,5);
+            //double längeA = Math.sqrt(x.getA() * x.getA() + x.getB() * x.getB());
             //double längeB = Math.pow(y.getA()*y.getA() + y.getB() * y.getB(), 0,5);
             double b = x.getB() * y.getB();
 
             Number erg = new Number(a, b);
             return erg;
         };
-
-        VectorCalculator VectorC = new VectorCalculator(vectorAdd, vectorSub, vectorMul, vectorDiv);
 
         //ComplexCalculator
         Number.CalculationOperation complexAdd = (x, y) -> {
@@ -130,8 +127,6 @@ public class HalloJavamitForEach {
             Number erg = new Number(a, b);
             return erg;
         };
-
-        ComplexCalculator complexC = new ComplexCalculator(complexAdd, complexSub, complexMul, complexDiv);
 
         Scanner sc = new Scanner(System.in);
         boolean b1 = true;
@@ -179,76 +174,36 @@ public class HalloJavamitForEach {
                     eing2 = Integer.parseInt(sc.nextLine());
                 }
 
+                AbstractCalculator calc = null;
+
                 switch (eing1) {
                     case 1:
-                        switch (eing2) {
-                            case 1:
-                                erg = rationalC.add(x, y);
-                                break;
-
-                            case 2:
-                                erg = rationalC.subtract(x, y);
-                                break;
-
-                            case 3:
-                                erg = rationalC.multiply(x, y);
-                                break;
-
-                            case 4:
-                                erg = rationalC.divide(x, y);
-                                break;
-                            default:
-                                System.out.println("Error!");
-                                break;
-                        }
+                        calc = new RationalCalculator(rationalAdd, rationalSub, rationalMul, rationalDiv);
                         break;
                     case 2:
-                        switch (eing2) {
-                            case 1:
-                                erg = VectorC.add(x, y);
-                                break;
-
-                            case 2:
-                                erg = VectorC.subtract(x, y);
-                                break;
-
-                            case 3:
-                                erg = VectorC.multiply(x, y);
-                                break;
-
-                            case 4:
-                                erg = VectorC.divide(x, y);
-                                break;
-                            default:
-                                System.out.println("Error!");
-                                break;
-                        }
+                        calc = new VectorCalculator(vectorAdd, vectorSub, vectorMul, vectorDiv);
                         break;
                     case 3:
-                        switch (eing2) {
-                            case 1:
-                                erg = complexC.add(x, y);
-                                break;
+                        calc = new ComplexCalculator(complexAdd, complexSub, complexMul, complexDiv);
 
-                            case 2:
-                                erg = complexC.subtract(x, y);
-                                break;
+                        break;
+                }
 
-                            case 3:
-                                erg = complexC.multiply(x, y);
-                                break;
+                switch (eing2) {
+                    case 1:
+                        erg = calc.add(x, y);
+                        break;
 
-                            case 4:
-                                erg = complexC.divide(x, y);
-                                break;
-                            default:
-                                System.out.println("Error!");
-                                break;
-                        }
+                    case 2:
+                        erg = calc.subtract(x, y);
+                        break;
+
+                    case 3:
+                        erg = calc.multiply(x, y);
                         break;
 
                     case 4:
-                        b1 = false;
+                        erg = calc.divide(x, y);
                         break;
                     default:
                         System.out.println("Error!");

@@ -60,9 +60,7 @@ public class NumberTester {
             return b;
         };
 
-        for (int i = 0;
-                i < anzahlTestfaelle;
-                i++) {
+        for (int i = 0; i < anzahlTestfaelle; i++) {
             line = fileScanner.nextLine();
             String[] parts = line.split("\\s+");
             if (Integer.parseInt(parts[0]) == 1) {
