@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pkg2hue;
 
-/**
- *
- * @author gaisb
- */
 public class VectorCalculator extends AbstractCalculator {
 
     public VectorCalculator(Number.CalculationOperation add, Number.CalculationOperation subtract, Number.CalculationOperation multiply, Number.CalculationOperation divide) {
@@ -37,5 +29,4 @@ public class VectorCalculator extends AbstractCalculator {
         Number n = divide.calc(a, b);
         return n;
     }
-
 }
